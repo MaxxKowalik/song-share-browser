@@ -2,6 +2,7 @@
 const config = require('../config')
 const store = require('../store')
 
+// authentication api
 const signUp = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -35,9 +36,48 @@ const signOut = () => {
     }
   })
 }
+
+// resource api
+const createSong = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/songs',
+    method: 'POST',
+    data: formData
+  })
+}
+const getAllSongs = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/songs',
+    method: 'POST',
+    data: formData
+  })
+}
+const deleteSong = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/song/:id',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+const updateRating = () => {
+  return $.ajax({
+    url: config.apiUrl + '/song/:id',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createSong,
+  getAllSongs,
+  deleteSong,
+  updateRating
 }

@@ -2,6 +2,7 @@
 
 const store = require('../store')
 
+// authentication user interface
 const onSignUpSuccess = (responseData) => {
   console.log(responseData)
   $('#log-user-message').text('Great Success! You have signed up!')
@@ -32,6 +33,8 @@ const onChangePasswordSuccess = (responseData) => {
 const onChangePasswordFailure = (responseData) => {
   $('#log-user-message').text('Failed to Change Password')
 }
+
+// resource user interface
 
 module.exports = {
   onSignUpSuccess,
