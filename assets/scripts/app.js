@@ -15,6 +15,7 @@ $(() => {
   // resource application
   $('#create-song').on('submit', authEvents.onCreateSong)
   $('#delete-song').on('submit', authEvents.onDeleteSong)
+  $('#all-songs').on('click', authEvents.onGetAllSongs)
 
   // $('#all-songs').on('submit', authEvents.onGetAllSongs)
   // $('#delete-song').on('click', authEvents.onDeleteSong)

@@ -51,8 +51,11 @@ const createSong = (formData) => {
 }
 const getAllSongs = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/songs',
-    method: 'POST',
+    url: config.apiUrl + '/songs/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data: formData
   })
 }

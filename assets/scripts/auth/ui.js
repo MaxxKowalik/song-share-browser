@@ -51,6 +51,13 @@ const onDeleteSongSuccess = (responseData) => {
 const onDeleteSongFailure = (responseData) => {
   $('#log-user-message').text('Song was not deleted')
 }
+const onGetAllSongsSuccess = (responseData) => {
+  $('#log-user-message').text('All Songs Found')
+  console.log(responseData)
+}
+const onGetAllSongsFailure = (responseData) => {
+  $('#log-user-message').text('Could not locate songs')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -64,5 +71,7 @@ module.exports = {
   onCreateSongSuccess,
   onCreateSongFailure,
   onDeleteSongSuccess,
-  onDeleteSongFailure
+  onDeleteSongFailure,
+  onGetAllSongsSuccess,
+  onGetAllSongsFailure
 }
