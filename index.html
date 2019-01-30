@@ -51,10 +51,11 @@
       <div class = create-song-container>
         <h3>Create Song</h3>
         <form id='create-song'>
-          <input type="text" name="song" placeholder="Song Name">
-          <input type="text" name="artist" placeholder="Artist Name">
-          <input type="text" name="album" placeholder="Album Name">
-          <input type="text" name="rating" placeholder="Rate This Song">
+          <input type="text" name="song[name]" placeholder="Song Name">
+          <input type="text" name="song[artist]" placeholder="Artist Name">
+          <input type="text" name="song[album]" placeholder="Album Name">
+          <input type="text" name="song[rating]" placeholder="Rate This Song">
+          <button>Submit</button>
         </form>
 
         <h3>Find All Songs</h3>
@@ -63,13 +64,16 @@
         <h3>Delete Song</h3>
         <form id='delete-song'>
           <input type="text" name="song" placeholder="Enter Song To Delete">
-      </div>
+          <button>Submit</button>
+      </form>
 
 
         <h3>Update Song Rating</h3>
         <form id='update-song'>
           <input type="text" name="song" placeholder="Song Name">
           <input type="text" name="rating" placeholder="Update Rating">
+          <button>Submit</button>
+        </form>
       </div>
 
     </body>

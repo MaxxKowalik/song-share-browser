@@ -39,9 +39,13 @@ const signOut = () => {
 
 // resource api
 const createSong = (formData) => {
+  console.log('data: ', formData)
   return $.ajax({
     url: config.apiUrl + '/songs',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data: formData
   })
 }

@@ -36,6 +36,15 @@ const onChangePasswordFailure = (responseData) => {
 
 // resource user interface
 
+const onCreateSongSuccess = (responseData) => {
+  console.log(responseData)
+  $('#log-user-message').text('You Created a Song!')
+}
+const onCreateSongFailure = (responseData) => {
+  console.log(responseData)
+  $('#log-user-message').text('Create Song Failure')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -44,5 +53,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onCreateSongSuccess,
+  onCreateSongFailure
 }
