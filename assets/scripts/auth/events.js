@@ -70,8 +70,9 @@ const onGetAllSongs = event => {
 }
 const onDeleteSong = event => {
   event.preventDefault()
+  const formData = getFormFields(event.target)
 
-  api.deleteSong()
+  api.deleteSong(formData)
     .then(ui.onDeleteSongSuccess)
     .catch(ui.onDeleteSongFailure)
 

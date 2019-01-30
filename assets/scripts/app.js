@@ -14,6 +14,8 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   // resource application
   $('#create-song').on('submit', authEvents.onCreateSong)
+  $('#delete-song').on('submit', authEvents.onDeleteSong)
+
   // $('#all-songs').on('submit', authEvents.onGetAllSongs)
   // $('#delete-song').on('click', authEvents.onDeleteSong)
   // $('#update-song').on('submit', authEvents.onUpdateRating)

@@ -44,6 +44,13 @@ const onCreateSongFailure = (responseData) => {
   console.log(responseData)
   $('#log-user-message').text('Create Song Failure')
 }
+const onDeleteSongSuccess = (responseData) => {
+  $('#log-user-message').text('Song Deleted')
+  console.log('Store is:', store)
+}
+const onDeleteSongFailure = (responseData) => {
+  $('#log-user-message').text('Song was not deleted')
+}
 
 module.exports = {
   onSignUpSuccess,
@@ -55,5 +62,7 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onCreateSongSuccess,
-  onCreateSongFailure
+  onCreateSongFailure,
+  onDeleteSongSuccess,
+  onDeleteSongFailure
 }
