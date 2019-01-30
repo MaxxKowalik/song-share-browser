@@ -6,9 +6,11 @@ const store = require('../store')
 const onSignUpSuccess = (responseData) => {
   console.log(responseData)
   $('#log-user-message').text('Great Success! You have signed up!')
+  console.log('Sign Up Success')
 }
 const onSignUpFailure = () => {
   $('#log-user-message').text('Username or Password taken, try again.')
+  console.log('Sign Up Failure')
 }
 const onSignInSuccess = (responseData) => {
   console.log(responseData)
@@ -35,6 +37,14 @@ const onChangePasswordFailure = (responseData) => {
 }
 
 // resource user interface
+// const onCreateSongSuccess = (responseData) => {
+//   console.log(responseData)
+//   $('#log-user-message').text('You Created a Song!')
+// }
+// const onCreateSongFailure = (responseData) => {
+//   console.log(responseData)
+//   $('#log-user-message').text('Create Song Failure')
+// }
 
 module.exports = {
   onSignUpSuccess,
@@ -45,4 +55,6 @@ module.exports = {
   onSignOutFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure
+  // onCreateSongSuccess,
+  // onCreateSongFailure
 }
