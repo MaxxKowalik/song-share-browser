@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const showSongsTemplate = require('../templates/song-listing.handlebars')
 
 // authentication user interface
 const onSignUpSuccess = (responseData) => {
@@ -52,7 +53,8 @@ const onDeleteSongFailure = (responseData) => {
   $('#log-user-message').text('Song was not deleted')
 }
 const onGetAllSongsSuccess = (responseData) => {
-  $('#log-user-message').text('All Songs Found')
+  const showSongsHtml = showSongsTemplate({ songs: responseData.songs })
+  $('#log-user-message').html(showSongsHtml)
   console.log(responseData)
 }
 const onGetAllSongsFailure = (responseData) => {
