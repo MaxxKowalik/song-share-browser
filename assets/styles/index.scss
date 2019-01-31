@@ -1,1 +1,66 @@
 @import '~bootstrap/scss/bootstrap';
+$background-color: #99ff99;
+$background-color-2: #9CA3DB;
+$font-color: #fff;
+$white: #fff;
+$black: #000;
+$success-color: #00ff00;
+$failure-color: #ff0000;
+
+body {
+  background-attachment: fixed;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261431' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23351947' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23552277' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  /* background by SVGBackgrounds.com */
+  background-size: cover;
+  color: $font-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.sign-up-container {
+  background-color: $background-color-2;
+  border: 3px solid $white;
+  font-size: 10px;
+  height: 120px;
+  // left: 1145px;
+  margin: 20px;
+  padding: auto;
+  // position: ;
+  text-align: center;
+  // top: auto;
+  width: 450px;
+}
+
+.sign-out-container {
+  background-color: $background-color-2;
+  border: 3px solid $white;
+  display: none;
+  font-size: 10px;
+  height: 120px;
+  left: 1145px;
+  margin: 20px;
+  padding: auto;
+  text-align: center;
+  width: 400px;
+}
+
+.create-song-container {
+  background-color: $background-color-2;
+  border: 3px solid $white;
+  display: none;
+  font-size: 10px;
+  height: 260px;
+  left: 1145px;
+  margin: 20px;
+  padding: auto;
+  position: relative;
+  text-align: center;
+  width: 500px;
+}

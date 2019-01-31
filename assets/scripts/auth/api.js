@@ -55,8 +55,7 @@ const getAllSongs = (formData) => {
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: formData
+    }
   })
 }
 const deleteSong = (formData) => {
@@ -76,7 +75,8 @@ const updateRating = (formData) => {
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: formData
   })
 }
 module.exports = {
