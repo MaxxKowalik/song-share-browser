@@ -81,8 +81,8 @@ const onDeleteSongFailure = (responseData) => {
 }
 const onGetAllSongsSuccess = (responseData) => {
   const showSongsHtml = showSongsTemplate({ songs: responseData.songs })
-  $('#load-resource-message').html(showSongsHtml)
-  $('#load-resource-message').show()
+  $('#load-resource-message').html(showSongsHtml).fadeIn(3000)
+  // $('#load-resource-message').fadeIn(3000)
   console.log(responseData)
 }
 const onGetAllSongsFailure = (responseData) => {
