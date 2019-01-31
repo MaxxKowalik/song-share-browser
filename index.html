@@ -12,8 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-      <h3 id='log-user-message'></h3>
+      <h1>Welcome to LooneyToons</h1>
 
       <div class = 'sign-up-container'>
 
@@ -48,6 +47,8 @@
             <button id='sign-out'>Sign Out</button>
       </div>
 
+      <h3 id='log-user-message'></h3>
+
       <div class = create-song-container>
         <h3>Create Song</h3>
         <form id='create-song'>
@@ -55,7 +56,7 @@
           <input type="text" name="song[artist]" placeholder="Artist Name">
           <input type="text" name="song[album]" placeholder="Album Name">
           <input type="text" name="song[rating]" placeholder="Rate This Song">
-          <button>Create</button>
+          <button>Submit</button>
         </form>
 
         <h3>Find All Songs</h3>
@@ -63,18 +64,19 @@
 
         <h3>Delete Song</h3>
         <form id='delete-song'>
-          <input type="text" name="song" placeholder="Enter Song To Delete">
-          <button>Submit</button>
+          <input type="text" name="song[id]" placeholder="Enter Song Id">
+          <button>Delete</button>
       </form>
 
 
         <h3>Update Song Rating</h3>
         <form id='update-song'>
-          <input type="text" name="song" placeholder="Song Name">
-          <input type="text" name="rating" placeholder="Update Rating">
-          <button>Submit</button>
+          <input type="text" name="song[id]" placeholder="Song Id">
+          <input type="text" name="song[rating]" placeholder="Update Rating">
+          <button>Update Song</button>
         </form>
       </div>
+      <h3 id='load-resource-message'></h3>
 
     </body>
 </html>

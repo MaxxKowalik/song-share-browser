@@ -46,55 +46,56 @@ const onChangePassword = event => {
 }
 
 // resource events
-// const onCreateSong = event => {
-//   event.preventDefault()
-//   const createSongForm = event.target
-//   const formData = getFormFields(createSongForm)
-//   // console.log('This Worked')
-//   api.createSong(formData)
-//     .then(ui.onCreateSongSuccess)
-//     .catch(ui.onCreateSongFailure)
-//
-//   $('form').trigger('reset')
-// }
-// const onGetAllSongs = event => {
-//   event.preventDefault()
-//   const getAllSongsForm = event.target
-//   const formData = getFormFields(getAllSongsForm)
-//
-//   api.getAllSongs(formData)
-//     .then(ui.onGetAllSongsSuccess)
-//     .catch(ui.onGetAllSongsFailure)
-//
-//   $('form').trigger('reset')
-// }
-// const onDeleteSong = event => {
-//   event.preventDefault()
-//
-//   api.deleteSong()
-//     .then(ui.onDeleteSongSuccess)
-//     .catch(ui.onDeleteSongFailure)
-//
-//   $('form').trigger('reset')
-// }
-// const onUpdateRating = event => {
-//   event.preventDefault()
-//   const formData = getFormFields(event.target)
-//
-//   api.updateRating(formData)
-//     .then(ui.onUpdateRatingSuccess)
-//     .catch(ui.onUpdateRatingFailure)
-//
-//   $('form').trigger('reset')
-// }
+const onCreateSong = event => {
+  event.preventDefault()
+  const createSongForm = event.target
+  const formData = getFormFields(createSongForm)
+
+  api.createSong(formData)
+    .then(ui.onCreateSongSuccess)
+    .catch(ui.onCreateSongFailure)
+
+  $('form').trigger('reset')
+}
+const onGetAllSongs = event => {
+  event.preventDefault()
+  const getAllSongsForm = event.target
+  const formData = getFormFields(getAllSongsForm)
+
+  api.getAllSongs(formData)
+    .then(ui.onGetAllSongsSuccess)
+    .catch(ui.onGetAllSongsFailure)
+
+  $('form').trigger('reset')
+}
+const onDeleteSong = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+
+  api.deleteSong(formData)
+    .then(ui.onDeleteSongSuccess)
+    .catch(ui.onDeleteSongFailure)
+
+  $('form').trigger('reset')
+}
+const onUpdateRating = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+
+  api.updateRating(formData)
+    .then(ui.onUpdateRatingSuccess)
+    .catch(ui.onUpdateRatingFailure)
+
+  $('form').trigger('reset')
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
-  // onCreateSong,
-  // onGetAllSongs,
-  // onDeleteSong,
-  // onUpdateRating
+  onChangePassword,
+  onCreateSong,
+  onGetAllSongs,
+  onDeleteSong,
+  onUpdateRating
 }

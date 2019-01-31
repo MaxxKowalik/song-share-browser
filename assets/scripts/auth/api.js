@@ -39,22 +39,29 @@ const signOut = () => {
 
 // resource api
 const createSong = (formData) => {
+  console.log('data: ', formData)
   return $.ajax({
     url: config.apiUrl + '/songs',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     data: formData
   })
 }
 const getAllSongs = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/songs',
-    method: 'POST',
-    data: formData
+    url: config.apiUrl + '/songs/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 const deleteSong = (formData) => {
+  console.log(formData.song)
   return $.ajax({
-    url: config.apiUrl + '/song/:id',
+    url: config.apiUrl + '/songs/' + formData.song.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -62,13 +69,14 @@ const deleteSong = (formData) => {
     data: formData
   })
 }
-const updateRating = () => {
+const updateRating = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/song/:id',
+    url: config.apiUrl + '/songs/' + formData.song.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: formData
   })
 }
 module.exports = {

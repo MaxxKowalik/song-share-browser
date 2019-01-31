@@ -7,11 +7,15 @@ const authEvents = require('./auth/events.js')
 // require('./example')
 
 $(() => {
+  // authentication application
   $('#sign-up').on('submit', authEvents.onSignUp)
   console.log('App Works!')
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  $('#sign-in').on('submit', authEvents.onGameIndex)
+  // resource application
   $('#create-song').on('submit', authEvents.onCreateSong)
+  $('#delete-song').on('submit', authEvents.onDeleteSong)
+  $('#all-songs').on('click', authEvents.onGetAllSongs)
+  $('#update-song').on('submit', authEvents.onUpdateRating)
 })
