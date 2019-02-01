@@ -18,7 +18,7 @@ const onSignUpFailure = () => {
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onSignInSuccess = (responseData) => {
-  $('#log-user-message').addClass('text-success').text('Sign In Success! Share some Tunes!')
+  $('#log-user-message').addClass('text-success').text('Sign In Success! Share some toons!')
   store.user = responseData.user
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
   $('.sign-up-container').hide()
@@ -26,7 +26,7 @@ const onSignInSuccess = (responseData) => {
   $('.create-song-container').fadeIn(1500)
 }
 const onSignInFailure = () => {
-  $('#log-user-message').addClass('text-danger').text('Unkown username or password')
+  $('#log-user-message').addClass('text-danger').text('Unknown username or password')
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 const onSignOutSuccess = (responseData) => {
