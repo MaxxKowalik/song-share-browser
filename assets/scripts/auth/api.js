@@ -39,7 +39,6 @@ const signOut = () => {
 
 // resource api
 const createSong = (formData) => {
-  console.log('data: ', formData)
   return $.ajax({
     url: config.apiUrl + '/songs',
     method: 'POST',
@@ -59,7 +58,6 @@ const getAllSongs = (formData) => {
   })
 }
 const deleteSong = (formData) => {
-  console.log(formData.song)
   return $.ajax({
     url: config.apiUrl + '/songs/' + formData.song.id,
     method: 'DELETE',

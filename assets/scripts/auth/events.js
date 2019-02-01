@@ -7,7 +7,6 @@ const onSignUp = event => {
   event.preventDefault()
   const signUpForm = event.target
   const formData = getFormFields(signUpForm)
-  console.log('This Worked!')
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
@@ -61,7 +60,6 @@ const onGetAllSongs = event => {
   event.preventDefault()
   const getAllSongsForm = event.target
   const formData = getFormFields(getAllSongsForm)
-
   api.getAllSongs(formData)
     .then(ui.onGetAllSongsSuccess)
     .catch(ui.onGetAllSongsFailure)
