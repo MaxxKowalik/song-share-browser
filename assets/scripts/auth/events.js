@@ -44,7 +44,7 @@ const onChangePassword = event => {
   $('form').trigger('reset')
 }
 
-// resource events
+// song resource events
 const onCreateSong = event => {
   event.preventDefault()
   const createSongForm = event.target
@@ -87,6 +87,45 @@ const onUpdateRating = event => {
   $('form').trigger('reset')
 }
 
+// genre resource events
+const onCreateGenre = event => {
+  event.preventDefault()
+  const createGenreForm = event.target
+  const formData = getFormFields(createGenreForm)
+
+  api.createGenre(formData)
+    .then(ui.onCreateGenreSuccess)
+    .catch(ui.onCreateGenreFailure)
+
+  $('form').trigger('reset')
+}
+const onGetAllGenres = event => {
+  event.preventDefault()
+  const getAllGenresForm = event.target
+  const formData = getFormFields(getAllGenresForm)
+  api.getAllGenres(formData)
+    .then(ui.onGetAllGenresSuccess)
+    .catch(ui.onGetAllGenresFailure)
+
+  $('form').trigger('reset')
+}
+const onDeleteGenre = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+
+  api.deleteGenre(formData)
+    .then(ui.onDeleteGenreSuccess)
+    .catch(ui.onDeleteGenreFailure)
+
+  $('form').trigger('reset')
+}
+// this will show the genre table
+const genresTable = event => {
+  // event.preventDefault()
+  $('.create-genre-container').show()
+  console.log('it worked')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -95,5 +134,9 @@ module.exports = {
   onCreateSong,
   onGetAllSongs,
   onDeleteSong,
-  onUpdateRating
+  onUpdateRating,
+  onCreateGenre,
+  onGetAllGenres,
+  onDeleteGenre,
+  genresTable
 }

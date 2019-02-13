@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const showSongsTemplate = require('../templates/song-listing.handlebars')
+const showGenresTemplate = require('../templates/genre-listing.handlebars')
 
 // authentication user interface
 const removeMessageClass = () => {
@@ -24,6 +25,7 @@ const onSignInSuccess = (responseData) => {
   $('.sign-up-container').hide()
   $('.sign-out-container').fadeIn(1500)
   $('.create-song-container').fadeIn(1500)
+  // $('.create-genre-container').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#log-user-message').addClass('text-danger').text('Unknown username or password')
@@ -51,7 +53,7 @@ const onChangePasswordFailure = (responseData) => {
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 
-// resource user interface
+// song resource user interface
 
 const onCreateSongSuccess = (responseData) => {
   $('#load-resource-message').addClass('text-success').text('You Created a Song!')
@@ -91,6 +93,38 @@ const onUpdateRatingFailure = (responseData) => {
   $('#load-resource-message').addClass('text-danger').text('Song was not updated')
   $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
+
+// genre resource user interface
+const onCreateGenreSuccess = (responseData) => {
+  $('#load-resource-message').addClass('text-success').text('Genre Created')
+  $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#song-table').hide()
+}
+const onCreateGenreFailure = (responseData) => {
+  $('#load-resource-message').addClass('text-danger').text('Failed to create Genre')
+  $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+}
+const onGetAllGenresSuccess = (responseData) => {
+  const showGenresHtml = showGenresTemplate({ genres: responseData.genres })
+  if (responseData.genres.length === 0) {
+    $('#load-resource-message').addClass('text-danger').text('No genres found')
+    $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  } else {
+    $('#log-user-message').addClass('text-success').text('Song Genres Located!')
+    $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+    $('#song-table').html(showGenresHtml).fadeIn(3000)
+  }
+}
+const onDeleteGenreSuccess = (responseData) => {
+  $('#load-resource-message').addClass('text-success').text('Genre Deleted')
+  $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('#song-table').hide()
+}
+const onDeleteGenreFailure = (responseData) => {
+  $('#load-resource-message').addClass('text-danger').text('Genre was not deleted')
+  $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -106,5 +140,10 @@ module.exports = {
   onDeleteSongFailure,
   onGetAllSongsSuccess,
   onUpdateRatingSuccess,
-  onUpdateRatingFailure
+  onUpdateRatingFailure,
+  onCreateGenreSuccess,
+  onCreateGenreFailure,
+  onGetAllGenresSuccess,
+  onDeleteGenreSuccess,
+  onDeleteGenreFailure
 }

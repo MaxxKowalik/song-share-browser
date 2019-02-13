@@ -37,7 +37,7 @@ const signOut = () => {
   })
 }
 
-// resource api
+// song resource api
 const createSong = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/songs',
@@ -77,6 +77,37 @@ const updateRating = (formData) => {
     data: formData
   })
 }
+
+// song resource api
+const createGenre = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/genres',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+const getAllGenres = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/genres/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const deleteGenre = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/genres/' + formData.genre.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -85,5 +116,8 @@ module.exports = {
   createSong,
   getAllSongs,
   deleteSong,
-  updateRating
+  updateRating,
+  createGenre,
+  getAllGenres,
+  deleteGenre
 }

@@ -59,7 +59,22 @@ h3 {
   border: 3px solid $white;
   display: none;
   font-size: 10px;
-  height: 260px;
+  height: 245px;
+  margin: 20px;
+  // padding: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 250px;
+  width: 500px;
+}
+
+.create-genre-container {
+  background-color: $background-color-2;
+  border: 3px solid $white;
+  display: none;
+  font-size: 10px;
+  height: 170px;
   margin: 20px;
   // padding: auto;
   position: absolute;

@@ -12,9 +12,17 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  // resource application
+  // song resource application
   $('#create-song').on('submit', authEvents.onCreateSong)
   $('#delete-song').on('submit', authEvents.onDeleteSong)
   $('#all-songs').on('click', authEvents.onGetAllSongs)
   $('#update-song').on('submit', authEvents.onUpdateRating)
+  // genre resource application
+  $('#create-genre').on('submit', authEvents.onCreateGenre)
+  $('#delete-genre').on('submit', authEvents.onDeleteGenre)
+  $('#all-genres').on('click', authEvents.onGetAllGenres)
+
+  // show genres table
+  $('body').on('click', '#genre-table', authEvents.genresTable)
+  // console.log('it worked!')
 })
