@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>My Song</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Welcome to LooneyToons</h1>
+
+      <div class = 'sign-up-container'>
+
+        <h3>Sign Up</h3>
+        <form id='sign-up'>
+          <input type="email" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+        <!-- <!<input type="submit" value="Submit" -->
+          <button>Submit</button>
+        </form>
+
+        <h3>Sign In</h3>
+        <form id='sign-in'>
+        <input type="email" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <button>Sign In</button>
+        </form>
+
+      </div>
+
+      <div class = sign-out-container>
+
+        <h3>Change Password</h3>
+        <form id='change-password'>
+          <input type="password" name="passwords[new]" placeholder="new password">
+          <input type="password" name="passwords[old]" placeholder="old password">
+          <button>Change Password</button>
+        </form>
+
+          <h3>Sign Out</h3>
+            <button id='sign-out'>Sign Out</button>
+      </div>
+
+
+      <div class = create-song-container>
+        <h3>Create Song</h3>
+        <form id='create-song'>
+          <input type="text" name="song[name]" placeholder="Song Name">
+          <input type="text" name="song[artist]" placeholder="Artist Name">
+          <input type="text" name="song[album]" placeholder="Album Name">
+          <input type="text" name="song[rating]" placeholder="Rate This Song">
+          <button>Submit</button>
+        </form>
+
+        <h3>Find All Songs</h3>
+        <button id='all-songs'>All Songs</button>
+
+        <h3>Delete Song</h3>
+        <form id='delete-song'>
+          <input type="text" name="song[id]" placeholder="Enter Song Id">
+          <button>Delete</button>
+      </form>
+
+
+        <h3>Update Song Rating</h3>
+        <form id='update-song'>
+          <input type="text" name="song[id]" placeholder="Song Id">
+          <input type="text" name="song[rating]" placeholder="Update Rating">
+          <button>Update Song</button>
+        </form>
+
+      </div>
+
+      <div class = create-genre-container>
+
+        <h3>Create Genre</h3>
+        <form id='create-genre'>
+          <input type="text" name="genre[genre_name]" placeholder="Genre Name">
+          <input type="text" name="genre[song_id]" placeholder="Song ID">
+          <button>Create</button>
+        </form>
+
+      </div>
+
+      <div class= auth-message>
+      <p id='log-user-message'></p>
+    </div>
+
+    <div class= resource-message>
+      <p id='load-resource-message'></p>
+    </div>
+
+    <div class= show-table>
+      <p id= 'song-table'></p>
+    </div>
+
+    </body>
+</html>
