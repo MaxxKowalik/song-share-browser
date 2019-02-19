@@ -89,18 +89,26 @@ const createGenre = (formData) => {
     data: formData
   })
 }
-const getAllGenres = (formData) => {
+const getAllGenres = (songId) => {
+  const formData = {}
+  formData.genre = {}
+  formData.genre.song_id = songId
   return $.ajax({
     url: config.apiUrl + '/genres/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: formData
   })
 }
-const deleteGenre = (formData) => {
+const deleteGenre = (genreId, songId) => {
+  const formData = {}
+  formData.genre = {}
+  formData.genre.id = genreId
+  formData.genre.song_id = songId
   return $.ajax({
-    url: config.apiUrl + '/genres/' + formData.genre.id,
+    url: config.apiUrl + '/genres/' + genreId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -108,6 +116,7 @@ const deleteGenre = (formData) => {
     data: formData
   })
 }
+
 module.exports = {
   signUp,
   signIn,

@@ -99,31 +99,20 @@ const onCreateGenre = event => {
 
   $('form').trigger('reset')
 }
-const onGetAllGenres = event => {
-  event.preventDefault()
-  const getAllGenresForm = event.target
-  const formData = getFormFields(getAllGenresForm)
-  api.getAllGenres(formData)
+const onGetAllGenres = songId => {
+  api.getAllGenres(songId)
     .then(ui.onGetAllGenresSuccess)
-    .catch(ui.onGetAllGenresFailure)
 
   $('form').trigger('reset')
 }
 const onDeleteGenre = event => {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-
-  api.deleteGenre(formData)
-    .then(ui.onDeleteGenreSuccess)
-    .catch(ui.onDeleteGenreFailure)
-
   $('form').trigger('reset')
 }
+
 // this will show the genre table
 const genresTable = event => {
-  // event.preventDefault()
   $('.create-genre-container').show()
-  console.log('it worked')
 }
 
 module.exports = {

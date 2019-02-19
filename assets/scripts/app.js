@@ -1,10 +1,7 @@
 'use strict'
 const authEvents = require('./auth/events.js')
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const api = require('./auth/api.js')
+const ui = require('./auth/ui.js')
 
 $(() => {
   // authentication application
@@ -19,10 +16,28 @@ $(() => {
   $('#update-song').on('submit', authEvents.onUpdateRating)
   // genre resource application
   $('#create-genre').on('submit', authEvents.onCreateGenre)
-  $('#delete-genre').on('submit', authEvents.onDeleteGenre)
-  $('#all-genres').on('click', authEvents.onGetAllGenres)
+  $('.all-genres').on('submit', authEvents.onGetAllGenres)
+  // $('.delete-genre').on('click', authEvents.onDeleteGenre)
 
   // show genres table
   $('body').on('click', '#genre-table', authEvents.genresTable)
-  // console.log('it worked!')
+
+  // delete genre button
+  $('body').on('click', '.delete-genre', () => {
+    $('.delete-genre').on('click', (event) => {
+      const genreId = $(event.target).data('genre')
+      const songId = $(event.target).data('song')
+      api.deleteGenre(genreId, songId)
+        .then(ui.onDeleteGenreSuccess)
+        .catch(ui.DeleteGenreFailure)
+    })
+  })
+
+  // get all genres
+  $('body').on('click', '.all-genres', () => {
+    $('.all-genres').on('click', (event) => {
+      const songId = $(event.target).data('song')
+      authEvents.onGetAllGenres(songId)
+    })
+  })
 })

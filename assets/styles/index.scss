@@ -63,9 +63,9 @@ h3 {
   margin: 20px;
   // padding: auto;
   position: absolute;
-  right: 0;
+  left: 0;
   text-align: center;
-  top: 250px;
+  top: 190px;
   width: 500px;
 }
 
@@ -74,13 +74,13 @@ h3 {
   border: 3px solid $white;
   display: none;
   font-size: 10px;
-  height: 170px;
+  height: 70px;
   margin: 20px;
   // padding: auto;
   position: absolute;
   left: 0;
   text-align: center;
-  top: 250px;
+  top: 490px;
   width: 500px;
 }
 
@@ -88,14 +88,14 @@ h3 {
   font-size: 30px;
   left: 10px;
   position: absolute;
-  top: 180px;
+  top: 150px;
 }
 
 .resource-message {
   font-size: 30px;
   left: 10px;
   position: absolute;
-  top: 180px;
+  top: 150px;
 }
 
 .show-table {

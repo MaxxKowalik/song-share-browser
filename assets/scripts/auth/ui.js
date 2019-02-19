@@ -25,7 +25,6 @@ const onSignInSuccess = (responseData) => {
   $('.sign-up-container').hide()
   $('.sign-out-container').fadeIn(1500)
   $('.create-song-container').fadeIn(1500)
-  // $('.create-genre-container').fadeIn(1500)
 }
 const onSignInFailure = () => {
   $('#log-user-message').addClass('text-danger').text('Unknown username or password')
@@ -39,6 +38,7 @@ const onSignOutSuccess = (responseData) => {
   $('.create-song-container').hide()
   $('#song-table').hide()
   $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('.create-genre-container').hide()
 }
 const onSignOutFailure = (responseData) => {
   $('#log-user-message').addClass('text-danger').text('You failed to sign out')
@@ -94,11 +94,11 @@ const onUpdateRatingFailure = (responseData) => {
   $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
 }
 
-// genre resource user interface
+// genre resource ui
 const onCreateGenreSuccess = (responseData) => {
   $('#load-resource-message').addClass('text-success').text('Genre Created')
   $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
-  $('#song-table').hide()
+  $('.create-genre-container').hide()
 }
 const onCreateGenreFailure = (responseData) => {
   $('#load-resource-message').addClass('text-danger').text('Failed to create Genre')
@@ -113,11 +113,13 @@ const onGetAllGenresSuccess = (responseData) => {
     $('#log-user-message').addClass('text-success').text('Song Genres Located!')
     $('#log-user-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
     $('#song-table').html(showGenresHtml).fadeIn(3000)
+    $('.create-genre-container').hide()
   }
 }
-const onDeleteGenreSuccess = (responseData) => {
+const onDeleteGenreSuccess = () => {
   $('#load-resource-message').addClass('text-success').text('Genre Deleted')
   $('#load-resource-message').fadeIn(1500).delay(1700).fadeOut(1000, removeMessageClass)
+  $('.create-genre-container').hide()
   $('#song-table').hide()
 }
 const onDeleteGenreFailure = (responseData) => {
